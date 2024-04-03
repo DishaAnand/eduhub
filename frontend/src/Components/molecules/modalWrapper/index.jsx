@@ -1,12 +1,11 @@
-/* eslint-disable no-shadow */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Input, Button, message,
 } from 'antd';
-import { Editor, EditorState, RichUtils } from 'draft-js';
+import { useQuill } from 'react-quilljs';
 /* internal components */
 import Modal from '../../atom/modal/index';
 /* slices */
@@ -15,37 +14,28 @@ import { setDescription, setTitle, setModalVisible } from './slice/modalSlice';
 import { postQuestion } from '../questions/Questions.service';
 /* styles */
 import styles from './index.module.scss';
+import 'quill/dist/quill.snow.css';
 
 const ModalWrapper = ({
   title = '',
   onSubmit = () => {},
 }) => {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+  const { quill, quillRef } = useQuill();
   const dispatch = useDispatch();
   const qTitle = useSelector(state => state.modalReducer.qTitle);
+  const qDesc = useSelector(state => state.modalReducer.qDesc);
   const isModalVisible = useSelector(state => state.modalReducer.isModalVisible);
   const { userFullName = '' } = useSelector(state => state.userSlice);
-
-  const onChange = (editorState) => {
-    setEditorState(editorState);
-    const contentState = editorState.getCurrentContent();
-    const text = contentState.getPlainText();
-    dispatch(setDescription(text));
-  };
-
-  const handleKeyCommand = (command, editorState) => {
-    const newState = RichUtils.handleKeyCommand(editorState, command);
-    if (newState) {
-      onChange(newState);
-      return 'handled';
+  useEffect(() => {
+    if (quill) {
+      quill.on('text-change', () => {
+        dispatch(setDescription(quill.getText()));
+      });
     }
-    return 'not-handled';
-  };
-
+  }, [quill]);
   const handleCancel = () => {
     dispatch(setModalVisible(false));
   };
-
   const resetData = () => {
     dispatch(setModalVisible(false));
     dispatch(setTitle(''));
@@ -55,7 +45,7 @@ const ModalWrapper = ({
   const handleSave = () => {
     const payload = {
       qTitle,
-      qDesc: editorState.getCurrentContent().getPlainText(),
+      qDesc,
       askedByUsername: userFullName,
     };
     postQuestion(payload)
@@ -70,7 +60,6 @@ const ModalWrapper = ({
         message.error(err);
       });
   };
-
   return (
     <Modal
       open={isModalVisible}
@@ -91,17 +80,20 @@ const ModalWrapper = ({
         </section>
         <section>
           <label htmlFor="description">Description</label>
-          <div className={styles.editorContainer}>
-            <Editor
-              editorState={editorState}
-              onChange={onChange}
-              handleKeyCommand={handleKeyCommand}
-            />
+          {/* <textarea
+            rows="10"
+            className={styles.textArea}
+            id="description"
+            name="description"
+            value={qDesc}
+            onChange={e => dispatch(setDescription(e.target.value))}
+          /> */}
+          <div className={styles.quilEditor}>
+            <div ref={quillRef} />
           </div>
         </section>
       </div>
     </Modal>
   );
 };
-
 export default ModalWrapper;

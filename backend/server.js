@@ -17,6 +17,7 @@ const userRouter = require('./routes/user');
 const dashboardRouter = require('./routes/dashboard')
 /* middleware */
 const corsMiddleware = require('./middlewares/corsMiddleware');
+const meetRouter = require('./routes/meeting');
 
 const dbURL = process.env.DB_URL
 
@@ -37,6 +38,7 @@ app.use('/api/blog', blogRouter);
 app.use('/user',userRouter);
 app.use('/', commentRouter.routes)
 app.use('/dashboard', dashboardRouter.routes);
+app.use('/meeting', meetRouter);
 
 const port = process.env.PORT || 6002;
 app.listen(port, () => {

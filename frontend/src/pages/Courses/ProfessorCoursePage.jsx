@@ -267,7 +267,7 @@ function ProfessorCoursePage() {
   return (
     <div>
       <NavBar
-        pages={["Courses Dashboard", "Community Forum", "Blogs", "Pricing"]}
+        pages={["Courses Dashboard", "Meeting" ,"Community Forum", "Blogs", "Pricing"]}
       />
       <div className="professor-courses-page">
         <div className="filter-and-search">
