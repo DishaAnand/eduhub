@@ -59,16 +59,16 @@ const ModalWrapper = ({
       askedByUsername: userFullName,
     };
     postQuestion(payload)
-      .then((response) => {
-        if (response.statusText === 'OK') {
-          onSubmit();
-          resetData();
-          message.success('Your question has been posted.');
-          dispatch(setModalVisible(false));
-        }
+      .then(() => {
+        onSubmit();
+        resetData();
+        message.success('Your question has been posted.');
       })
       .catch((err) => {
         message.error(err);
+      })
+      .finally(() => {
+        dispatch(setModalVisible(false));
       });
   };
 
