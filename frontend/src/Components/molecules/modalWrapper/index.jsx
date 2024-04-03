@@ -64,6 +64,7 @@ const ModalWrapper = ({
           onSubmit();
           resetData();
           message.success('Your question has been posted.');
+          dispatch(setModalVisible(false));
         }
       })
       .catch((err) => {
