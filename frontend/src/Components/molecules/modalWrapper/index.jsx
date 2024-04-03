@@ -80,14 +80,6 @@ const ModalWrapper = ({
         </section>
         <section>
           <label htmlFor="description">Description</label>
-          {/* <textarea
-            rows="10"
-            className={styles.textArea}
-            id="description"
-            name="description"
-            value={qDesc}
-            onChange={e => dispatch(setDescription(e.target.value))}
-          /> */}
           <div className={styles.quilEditor}>
             <div ref={quillRef} />
           </div>
