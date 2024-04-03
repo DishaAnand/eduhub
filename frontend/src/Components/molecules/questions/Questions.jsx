@@ -53,9 +53,10 @@ const Questions = () => {
   const handleQuestionClick = (questionId) => {
     navigate(`${location.pathname}/${questionId}`);
   };
+
   return (
     <div>
-      <Navbar />
+      <Navbar page={["My Courses", "Community Forum", "Blogs"]} />
       <div className={styles.container}>
         <CustomBtn
           title="Ask a Question"
@@ -74,6 +75,7 @@ const Questions = () => {
             timeStamp = 0,
             askedByUsername = '',
           } = questions || {};
+
           return (
             /* container */
             <div key={qId} className={styles.questionContainer}>
@@ -95,13 +97,13 @@ const Questions = () => {
                 role="button"
                 tabIndex={0}
               >
-                <div className={styles.qTitle}>
-                  <p className={styles.qTitle__para} title={qTitle}>
+                <div className={styles.qTitle} title={qTitle}>
+                  <p className={styles.qTitle__para}>
                     {qTitle}
                   </p>
                 </div>
-                <div className={styles.qDesc}>
-                  <p className={styles.qDesc__para} title={qDesc}>
+                <div className={styles.qDesc} title={qDesc}>
+                  <p className={styles.qDesc__para}>
                     {qDesc}
                   </p>
                 </div>
