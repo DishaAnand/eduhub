@@ -1,93 +1,320 @@
-# Eduhub
+# EduHub
+
+* *Deployed Frontend URL*: <https://eduhub-react-frontend.vercel.app/>
+* *Deployed Backend URL*: <https://eduhub-node-backend.onrender.com>
+
+## Authors
+
+* [Kunal Rajeshkumar Makwana](kn362288@dal.ca)
+* [Rachit Khanna]()
+* [Disha Anand]()
+* [Rahul Goswami](rh917388@dal.ca)
+* [Freya Vora](fr793929@dal.ca)
+* [Harshpreet Singh]()
 
 
+## Built With
 
-## Getting started
+* [React](https://legacy.reactjs.org/docs/getting-started.html/) - The web framework used
+* [npm](https://docs.npmjs.com//) - Dependency Management
+* [MongoDB](https://legacy.reactjs.org/docs/getting-started.html/) - The Database used
+* [ZegoCloud](https://legacy.reactjs.org/docs/getting-started.html/) - The SDK Kit used for live streaming
+* [Node](https://nodejs.org/en/learn/getting-started/introduction-to-nodejs) - Runtime JS environment used for backend
+* [Express](https://expressjs.com/en/starter/hello-world.html) - Web framework used for Node.js
+* [Springboot](https://spring.io/guides/gs/spring-boot) - Java-based framework for building our web application
 
-To make it easy for you to get started with Github, here's a list of recommended next steps.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Prerequisites
 
-## Add your files
+To have this project up and running on your local machine, you will first need to install the following softwares.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
 
+Node.js(v20.11.0)
+
+See the following section for detailed step-by-step instructions on how to install this software.
+
+## Installing
+
+Download and Install Node.js for your Operating System from https://nodejs.org/en/download.
+
+Check if Node.js is successfully installed by checking it's version on the terminal.
+
+node --version
+
+
+Confirm if the version is the same as the one downloaded.
+
+
+## In order to run it locally :
+- Clone the project using git clone.
+```bash
+git clone https://git.cs.dal.ca/harshpreet/csci_5709_grp-06.git
 ```
-cd existing_repo
-git remote add origin https://git.cs.dal.ca/harshpreet/csci_5709_grp-06.git
-git branch -M main
-git push -uf origin main
+- Move to the cloned directory using cd command. 
+```bash
+cd csci_5709_grp-06
+```
+- Now go inside the backend folder using cd command.
+```bash
+cd backend
+```
+- Run  `npm install` in your terminal to install the dependencies
+```bash
+npm install
+```
+- Then Run command : npm start to start the backend code
+```bash
+npm start
 ```
 
-## Integrate with your tools
+- Now re-direct to the frontend folder using cd command. 
+```bash
+cd ../frontend
+```
+- Run  `npm install` in your terminal to install the dependencies
+```bash
+npm install
+```
+- Then Run command : npm start to start the backend code
+```bash
+npm start
+```
 
-- [ ] [Set up project integrations](https://git.cs.dal.ca/harshpreet/csci_5709_grp-06/-/settings/integrations)
+- To open the web application, click on the link which is there in the logs.
 
-## Collaborate with your team
+- **Disclaimer: We have deployed backend code on render, so we have replace api calls with the url of deployed backend url.**
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+- In order to use localhost backend code, you have to modify the frontend/src/services/urls.js file. 
 
-## Test and Deploy
+- Go to that file and change :
+```bash
+baseURL = 'localhost:6002'  //changing url to local backend
+```
 
-Use the built-in continuous integration in GitLab.
+- Now you are all set to run and test the application. Wohooo!!
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## Deployment
+### Frontend
 
-***
+To deploy our project environment, we utilized Vercel. Here's a summary of the deployment process we followed:
 
-# Editing this README
+- Setting Up the Vercel Account
+- Connecting to Github Repository
+- Configuring Build Settings
+- Continuous Deployment
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Backend
 
-## Suggestions for a good README
+To deploy our project environment, we utilized Render. Here's a summary of the deployment process we followed:
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+- Creating a Render Account
+- Deploying Backend Services
+- Configuring Environment Variables
+- Continuous Deployment
 
-## Name
-Choose a self-explaining name for your project.
+## Application Architecture
+The application architecture includes the following components:
+- Router: It is responsible for handling client requests and re-direct to respective
+middleware for pre-validations.
+- Node.js: A JavaScript runtime built on Chrome's V8 JavaScript engine, used for
+server-side scripting.
+- Models: It contains the structure of the application's data.
+- React.js: A JavaScript library used for building user interfaces.
+- Components: It is a reusable piece of code in React.js that controls the rendering and
+behaviour of a part of the UI.
+- Express.js: A framework that runs on top of Node.js, making it more efficient for web
+applications.
+- Middlewares: It is used for handling validations and performing operations before the
+request reaches the controller.
+- Controllers: It is responsible for handling client requests and returning appropriate
+responses.
+- Repository: It is used for abstracting the database operations.
+- MongoDB: A NoSQL document-oriented database used for storing application data.
+- SpringBoot: Java-based framework for building our web application.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+## Folder Structure
+### Backend
+As we are using NodeJS for backend, so there
+are package.json and package-lock.json for maintaining the dependencies of the project.
+- Constant: This folder will have all the constants which are defined in entire NodeJS code.
+For ex. Static url.
+- Controller: This folder will have all the controllers of the features. It is the place where all
+the business logic of the application will be maintained.
+- Models: This folder will have schema for all the features. It is responsible for defining the
+shape of the data, as well as any validation rules or business logic associated with it.
+- Routes: This folder will have routes for all the http request made by the user or react
+application.
+- .env: This file have all the secret key values, and this file won’t be deployed to any
+platform in order to secure the credentials.
+- Server.js: This file is the entry point of node.js where express server has initialised.
+- Middlewares: This folder will have middlewares for all the features which will pre-validate
+and handle the request body.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### Frontend
+As we are using ReactJS for frontend, so
+there are package.json and package-lock.json for maintaining the dependencies of the project.
+- tailwind.config.js: As we are using Tailwind CSS for our project, this file will help us
+to determine the file name format in which we have to apply Tailwind CSS.
+- postcss.config.js: This file will define the plugins for the Tailwind CSS.
+- index.jsx: This file is the entry point of an application where we have defined our
+browser router.
+- Assets folder: This folder will have static images and other static resources which we
+are using in our application.
+- Components: This folder will store all the react components designed for our website.
+- pages: This folder will have the main pages of our application. For ex. Login page,
+Course dashboard page etc.
+- Readme.md : This file will have the information of our project, like which technology
+we are using and helps others to get started with the project.
+- Core: This folder will have routes for the EduHub Application.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Feature : User Authentication (Account Management)
+- **Overview**: This feature is intended to provide functionality for user authentication and account management. It allows users to securely sign up, log in, and manage their accounts within the application. **The whole authentication is implement using JWT tokens**.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+    **1.** **Sign Up for an Account**
+    - Users can create new accounts by providing necessary details such as firstName, lastName, role (Student or Teacher), email, and password.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+    - Password has been encrypted using bcrypt and the JWT token has been sent to the user in the header from backend and it has been stored in the cookie with the expiry time of 2 days.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+    **2.** **Login to an existing Account:**
+    - Registered users can log in to their accounts using their credentials. Authentication mechanisms is implemented using JSON Web Tokens to securely manage user sessions.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+    **3.** **Forgot Password:**
+    - In case users forget their passwords, the system will provide a mechanism for password reset. Our system will send a link over mail to reset the password with the expiry time of 20 minutes. 
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+    **4.** **Profile page:**
+    - Logged-in users will be able to see the account details including firstname, lastname, email and will be able to update the same. 
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+    - So basically, i am displaying the details of the user from the userSlice which i am maintaining it using Redux. 
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+    **5.** **Logout:**
+    - Logged-in users will be able to logout from the application by clicking on logout which will clear the accesstoken cookie on the client side.
+
+
+    **Backend file Path:** csci_5709_grp-06\backend\controller\user.js
+
+
+    ***For more details re-direct to***: https://git.cs.dal.ca/harshpreet/csci_5709_grp-06/-/tree/dev_kunal/backend
+
+
+## Feature: Payment using stripe
+**Backend file Path:** csci_5709_b00954473/Assignments/Assignment3/backend/controller/payment.js
+
+**Frontend file Path:** csci_5709_b00954473/Assignments/Assignment3/frontend/src/Components/PricingPage.jsx
+
+**Tasks included**
+1. create a payment gateway to tutors using stripe integration.
+
+## Feature: Community forum
+**Backend file paths:** csci_5709_b00954473/Assignments/Assignment3/backend/controller/communityForum.js
+
+csci_5709_b00954473/Assignments/Assignment3/backend/controller/comments.js
+
+**Frontend file paths:** csci_5709_b00954473/Assignments/Assignment3/frontend/src/Components/organisms/qnaPage
+
+csci_5709_b00954473/Assignments/Assignment3/frontend/src/Components/molecules/questions
+
+**Tasks included**
+1. Student and tutors both able to view the questionnarium page that consists of the interactions or the questions being asked
+
+2. Students are able to even post a question which are then sorted with date and time
+
+3. Once a particular question is clicked, a person can either answer to the question using the comment option or even reply to it
+
+
+
+### Feature: Course Creation and Edit
+
+Backend code available at - https://git.cs.dal.ca/harshpreet/csci_5709_grp-06/-/tree/freya_dev2?ref_type=heads
+
+**Backend File Path:** 
+- `springbootBackend/WebBackend/testBackend/src/main/java/com/Controller/CourseController.java`
+- `springbootBackend/WebBackend/testBackend/src/main/java/com/Entity/Course.java`
+- `springbootBackend/WebBackend/testBackend/src/main/java/com/Repository/CourseRepository.java`
+- `springbootBackend/WebBackend/testBackend/src/main/java/com/Service/CourseService.java`
+
+Here, similar files are created for Chapters and Subchapters creation and editing.
+
+**Frontend File Path:** 
+- `frontend/src/pages/Courses/ProfessorCoursePage.jsx`
+- `frontend/src/pages/Courses/EditCoursePage.jsx`
+
+**Tasks Included:**
+1. **Course Creation:**
+   - Users (likely teachers) can create new courses by providing necessary details such as course name, description, course image, etc.
+   - Upon creation, the course details will be stored in the database.
+
+2. **Course Editing:**
+   - Users (teachers) can edit existing courses by modifying the course details such as name, description, course image , etc.
+   - Upon editing, the modified course details will be updated in the database.
+
+### Feature: Course View
+
+**Backend File Path:** 
+
+Backend code available at - https://git.cs.dal.ca/harshpreet/csci_5709_grp-06/-/tree/freya_dev2?ref_type=heads
+
+- `springbootBackend/WebBackend/testBackend/src/main/java/com/Controller/CourseController.java`
+- `springbootBackend/WebBackend/testBackend/src/main/java/com/Entity/Course.java`
+- `springbootBackend/WebBackend/testBackend/src/main/java/com/Repository/CourseRepository.java`
+- `springbootBackend/WebBackend/testBackend/src/main/java/com/Service/CourseService.java`
+
+Here, similar files are created for Chapters and Subchapters view.
+
+**Frontend File Path:** 
+- `frontend/src/pages/Courses/MyCoursePage.jsx`
+- `frontend/src/pages/Courses/ChapterDetailsPage.jsx`
+
+**Tasks Included:**
+1. **Course Listing:**
+   - Users (students) can view a list of available courses.
+   - The courses will be fetched from the backend and displayed in the frontend.
+   
+2. **Course Details:**
+   - Users (students) can view detailed information about each course.
+   - This includes the course name, description, duration, etc.
+   - Users can click on a course to view its details.
+
+## Feature: Question bank and test creation by the professor
+**Tasks included**
+1. Creation of Question Bank
+2. Creation and Generation of Responses
+
+
+## Feature: Pricing Model for Professor
+
+**Tasks included**
+1. Subscribing to the platform
+
+## Feature: Blog Creation and Edit
+**Tasks included**
+1. Blog Creation:
+
+Users can create new blog posts by providing necessary details such as title, content, etc.
+Upon creation, the blog post details will be stored in the database.
+
+2. Blog Editing:
+
+Users can edit existing blog posts by modifying the blog details such as title, content, etc.
+Upon editing, the modified blog post details will be updated in the database.
+
+## Feature: Blog View
+**Tasks included**
+
+1. Blog Listing:
+
+Users can view a list of available blog posts.
+The blog posts will be fetched from the backend and displayed in the frontend.
+
+## Feature: Dashboard
+**Tasks included**
+
+1. Course Listing:
+When students login the first page they land is to Dashboard. The dashboard has course listing.
+Every course has enrolling option. After you click on the enroll now the students gets enrolled in that course and then rest of the flow is carried out.
+
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+EduHub is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+

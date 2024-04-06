@@ -9,9 +9,6 @@ import { setUserData } from '../../Components/slices/userSlice';
 import Cookies from 'universal-cookie';
 
 /* internal components */
-import Questions from '../../Components/molecules/questions/Questions';
-import QnAPage from '../../Components/organisms/qnaPage';
-
 const SignUp = lazy(() => import('../../pages/Signup'));
 const Login = lazy(() => import('../../pages/Login'));
 const ForgotPwd = lazy(() => import('../../pages/ForgotPwd'));
@@ -34,6 +31,8 @@ const ResultList = lazy(() => import('../../pages/Tests/Student/JSX/ResultList')
 const ResultDetailedView = lazy(() => import('../../pages/Tests/Student/JSX/ResultDetailedView'));
 const FinishTestScreen = lazy(() => import('../../pages/Tests/Student/JSX/FinishTestScreen'));
 
+const Questions = lazy(() => import('../../Components/molecules/questions/Questions'));
+const QnAPage = lazy(() => import('../../Components/organisms/qnaPage'));
 const EditBlog = lazy(() => import('../../Components/EditBlog'));
 const Success = lazy(() => import('../../Components/molecules/payment/success'));
 const Cancel = lazy(() => import('../../Components/molecules/payment/failure'));
@@ -45,6 +44,10 @@ const UserProfile = lazy(() => import('../../Components/profilePage'));
 const ResetPwd = lazy(() => import('../../pages/ResetPwd'));
 const StreamClass = lazy(() => import('../../pages/StreamClass'));
 const Logout = lazy(() => import('../../Components/logout'));
+
+const Meeting = lazy(() => import("../../pages/Meeting/Meeting.tsx"));
+
+const StudentMeeting = lazy(() => import("../../pages/Meeting/StudentMeeting.tsx"));
 
 const ErrorElement = () => {
   <Suspense fallback={<Loader />}>
@@ -165,12 +168,19 @@ const privateRoutes = {
   '/result-list': ResultList,
   '/result-detailed-view': ResultDetailedView,
   '/finish-test': FinishTestScreen,
+  // soa for routing by Freya on 29 March
   '/professor/courses': ProfessorCoursePage,
   '/my-courses': MyCoursePage,
   '/edit-course/:id': EditCoursePage,
   '/chapter-details/:id': ChapterDetailsPage,
+  // eoa for routing by Freya on 29 March
   '/profile': UserProfile,
   '/logout': Logout,
+  "/meeting": Meeting,
+  "/room/:roomId": StreamClass,
+  "/session": StudentMeeting,
+  "/contact": Contactus,
+  "/faqs": Faqs,
 };
 
 const publicRoutes = {
@@ -178,10 +188,11 @@ const publicRoutes = {
   '/login': Login,
   '/register': SignUp,
   '/forgotpwd': ForgotPwd,
-  '/contactus': Contactus,
+  '/contact': Contactus,
   '/faqs': Faqs,
   '/resetpwd/:forgotToken': ResetPwd,
-  '/room/:roomId': StreamClass,
+  // '/room/:roomId': StreamClass,
+  // "/meeting": Meeting,
 };
 
 function RouteConfig() {

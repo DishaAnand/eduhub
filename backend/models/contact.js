@@ -1,12 +1,12 @@
 // Rahul Goswami
 const mongoose = require("mongoose");
 
-const meetingSchema = new mongoose.Schema({
-  user_id: {
+const contactSchema = new mongoose.Schema({
+  fullname: {
     type: String,
     required: true,
   },
-  title: {
+  email: {
     type: String,
     required: true,
   },
@@ -14,10 +14,6 @@ const meetingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  meeting_url: {
-    type: String,
-    required: true,
-  },
 });
 
-exports.Meeting = mongoose.model("Meeting", meetingSchema);
+exports.Contact = mongoose.model("Contact", contactSchema);
