@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
- 
+import BackLogo from "../assets/images/back-logo-1.webp";
  
 const ResetPwd = () => {
   const [password, setPassword] = useState("");
@@ -109,3 +109,4 @@ const ResetPwd = () => {
 };
  
 export default ResetPwd;
+ 
