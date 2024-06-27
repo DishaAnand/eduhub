@@ -2,16 +2,30 @@
 
 EduHub is a comprehensive learning management system (LMS) designed to facilitate connections, teaching, and interaction between tutors and students.
 
+## Technology Used
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="NodeJS" />
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/ZegoCloud-5C9DFF?style=for-the-badge&logo=zegocloud&logoColor=white" alt="ZegoCloud" />
+</p>
 
 ## Deployed Links
+https://eduhub-lms.vercel.app
 
+<br>
 
 ## Built With
 **Frontend**: React, Tailwind CSS
 **Backend**: Node.js, Express, MongoDB, Spring Boot
 **SDK**: ZegoCloud for live streaming
 
-<br> 
 
 ## Prerequisites
 **Node.js**: v20.11.0
