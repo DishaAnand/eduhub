@@ -22,14 +22,14 @@ https://eduhub-lms.vercel.app
 <br>
 
 ## Built With
-**Frontend**: React, Tailwind CSS
-**Backend**: Node.js, Express, MongoDB, Spring Boot
-**SDK**: ZegoCloud for live streaming
+- **Frontend**: React, Tailwind CSS
+- **Backend**: Node.js, Express, MongoDB, Spring Boot
+- **SDK**: ZegoCloud for live streaming
 
 
 ## Prerequisites
-**Node.js**: v20.11.0
-**MongoDB**: Ensure MongoDB is installed and running locally or use a MongoDB Atlas account
+- **Node.js**: v20.11.0
+- **MongoDB**: Ensure MongoDB is installed and running locally or use a MongoDB Atlas account
 
 <br> 
 
