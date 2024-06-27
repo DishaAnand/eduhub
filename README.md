@@ -163,13 +163,10 @@ Course Listing: Display available courses for students to enroll.
   - postcss.config.js: PostCSS configuration.
   - index.jsx: Entry point of the application.
 
-<br> 
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-<br>
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/DishaAnand/eduhub/blob/main/LICENSE) file for details.
 
 ## About
 
