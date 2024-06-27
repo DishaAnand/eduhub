@@ -2,26 +2,24 @@
 
 EduHub is a comprehensive learning management system (LMS) designed to facilitate connections, teaching, and interaction between tutors and students.
 
-<hr> 
 
-### Deployed Links
+## Deployed Links
 
-<hr> 
 
-### Built With
+## Built With
 **Frontend**: React, Tailwind CSS
 **Backend**: Node.js, Express, MongoDB, Spring Boot
 **SDK**: ZegoCloud for live streaming
 
-<br> <hr>  
+<br> 
 
-### Prerequisites
+## Prerequisites
 **Node.js**: v20.11.0
 **MongoDB**: Ensure MongoDB is installed and running locally or use a MongoDB Atlas account
 
-<br> <hr> 
+<br> 
 
-### Installation
+## Installation
 
 1. Clone the repository
 ```bash
@@ -87,41 +85,41 @@ npm start
 
 The frontend will run on http://localhost:3000.
 
-<br> <hr> 
+<br>
 
-### Features
+## Features
 
-#### User Authentication
+### User Authentication
 - Sign Up: Register new users (Student/Teacher) with encrypted passwords and JWT tokens.
 - Login: Authenticate existing users with JWT.
 - Forgot Password: Reset password via email link.
 - Profile Management: Update user details.
 - Logout: Clear user session.
 
-#### Payment Integration
+### Payment Integration
 Integrated Stripe for secure payment processing.
 
-#### Community Forum
+### Community Forum
 - Question Posting: Students and tutors can post questions.
 - Commenting: Respond to questions and comments.
 
-#### Course Management
+### Course Management
 - Creation and Editing: Teachers can create and edit courses.
 - Viewing: Students can view and enroll in courses.
 
-#### Question Bank and Tests
+### Question Bank and Tests
 - Creation: Teachers can create question banks and tests.
 - Attempt: Students can attempt tests and view results.
 
-#### Blog Management
+### Blog Management
 Creation, Editing, Listing, and Deletion: Manage blog posts.
 
-#### Dashboard
+### Dashboard
 Course Listing: Display available courses for students to enroll.
 
-<br> <hr> 
+<br> 
 
-### Deployment
+## Deployment
 
 - Frontend
   - Vercel: Used for hosting the frontend.
@@ -130,9 +128,9 @@ Course Listing: Display available courses for students to enroll.
   - Render: Used for hosting the backend.
   - Steps: Creating a Render account, deploying backend services, configuring environment variables, and enabling continuous deployment.
 
-<br> <hr> 
+<br> 
 
-### Folder Structure
+## Folder Structure
 
 - Backend
   - constants/: Define application-wide constants.
@@ -151,15 +149,15 @@ Course Listing: Display available courses for students to enroll.
   - postcss.config.js: PostCSS configuration.
   - index.jsx: Entry point of the application.
 
-<br> <hr> 
+<br> 
 
-### License
+## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-<br> <hr> 
+<br>
 
-### About
+## About
 
 EduHub aims to provide an efficient and interactive platform for online learning, helping tutors and students connect seamlessly.
 
