@@ -30,6 +30,11 @@ https://eduhub-lms.vercel.app
 
 <br>
 
+## Demo Video
+
+https://github.com/DishaAnand/eduhub/assets/102431437/4f6ad14a-d5b3-40e6-88d6-402de1bba7bb
+
+
 ## Built With
 - **Frontend**: React, Tailwind CSS
 - **Backend**: Node.js, Express, MongoDB, Spring Boot
